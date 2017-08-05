@@ -14,4 +14,9 @@ class AppTest < Minitest::Test
     get '/'
     assert_match /Busca de Endereço/, last_response.body
   end
+
+  def test_home_busca_de_endereco
+    get '/?url=Avenida+Rudge+315'
+    assert_match /Avenida Rudge, 315/, last_response.body    
+  end
 end
